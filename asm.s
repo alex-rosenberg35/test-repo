@@ -20,7 +20,7 @@ L2:								# loop body
 	# compute and push arguments onto the stack
 	movl  -4(%ebp), %ecx		# fetch i from the stack
 	movl  %ecx, 24(%esp)		# move i to the stack
-	movl  $STR0, 28(%esp)
+	movl  $STR0, 28(%esp)		# move pointer to "i = %d" to the stack
 	call  _printf
 	addl  $2, -4(%ebp)			# i += 2
 L0:								# loop entry-point
