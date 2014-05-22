@@ -34,7 +34,6 @@ L0:								# loop entry-point
 	cmp  %edi, %ecx				# i < 20
 	jl    L2
 	# end of loop
-	# release the frame from the top of the stack (leave)
-	movl  %ebp, %esp
-	popl  %ebp
+	# release the frame from the top of the stack
+	leave
 	ret
