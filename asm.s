@@ -19,7 +19,7 @@ _main:
 L2:								# loop body
 	# compute and push arguments onto the stack
 	movl  $6, 16(%esp)
-	movl  $STR1, 20(%esp)
+	movl  $STR1, 20(%esp)		# place pointer to string "foo" on the stack
 	movl  -4(%ebp), %ecx		# fetch i from the stack
 	movl  %ecx, 24(%esp)		# move i to the stack
 	movl  $STR0, 28(%esp)
