@@ -1,0 +1,18 @@
+*.class
+
+# ignore temporary files
+# such as backup files,
+# MS Office owner files,
+# AppleDouble resource forks,
+# vim swap files, etc.
+*~
+~$*
+*.~*
+._*
+*.swp
+*.tmp
+.DS_Store
+Icon?
+Thumbs.db
+desktop.ini
+
