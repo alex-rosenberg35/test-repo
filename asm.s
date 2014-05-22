@@ -1,7 +1,7 @@
 	.file	"asm.s"
 	.cstring
-STR0:
-	.ascii "i = %d %d %d"
+STR0:	.ascii "i = %d %s %d"
+STR1:	.ascii "foo"
 	.text
 .globl _main
 _main:
@@ -19,7 +19,7 @@ _main:
 L2:								# loop body
 	# compute and push arguments onto the stack
 	movl  $6, 16(%esp)
-	movl  $5, 20(%esp)
+	movl  $STR1, 20(%esp)
 	movl  -4(%ebp), %ecx		# fetch i from the stack
 	movl  %ecx, 24(%esp)		# move i to the stack
 	movl  $STR0, 28(%esp)
