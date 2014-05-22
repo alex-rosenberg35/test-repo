@@ -1,7 +1,7 @@
 	.file	"asm.s"
 	.cstring
 STR0:
-	.ascii "i = %d"
+	.ascii "i = %d %d"
 	.text
 .globl _main
 _main:
@@ -18,9 +18,10 @@ _main:
 	jmp   L0					# jump to loop entry point
 L2:								# loop body
 	# compute and push arguments onto the stack
+	movl  $5, 16(%esp)
 	movl  -4(%ebp), %ecx		# fetch i from the stack
-	movl  %ecx, 24(%esp)		# move i to the stack
-	movl  $STR0, 28(%esp)		# place pointer to "i = %d" onto the stack
+	movl  %ecx, 20(%esp)		# move i to the stack
+	movl  $STR0, 24(%esp)		# place pointer to "i = %d" onto the stack
 	call  _printf
 	addl  $2, -4(%ebp)			# i += 2
 L0:								# loop entry-point
